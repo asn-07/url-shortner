@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "042c1197-ded0-443a-9277-188b7944c196",
+		"name": "URL Shortner",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23496507"
+	},
+	"item": [
+		{
+			"name": "Shorten the given URL",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"url\": \"https://stackoverflow.com/questions/19098079/how-to-get-all-keys-from-redis-using-redis-template\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/shorten",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"shorten"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Shorten the given URL",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\": \"https://snapbizz.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/shorten",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"shorten"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"url\": \"a94f6b\"\r\n}"
+				}
+			]
+		},
+		{
+			"name": "Visit Shortened URL",
+			"protocolProfileBehavior": {
+				"strictSSL": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/a94f6b",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"a94f6b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "See all the Hash and URLs in the redis",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"all"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "See all the Hash and URLs in the redis",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"all"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"a94f6b\": \"https://snapbizz.com\",\r\n    \"eb82ed\": \"https://stackoverflow.com/questions/19098079/how-to-get-all-keys-from-redis-using-redis-template\"\r\n}"
+				}
+			]
+		}
+	]
+}
